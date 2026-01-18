@@ -86,34 +86,13 @@ const nextQuestionHandler = () => {
 
           <input  type="text" placeholder="Option A" value={options.A}  onChange={(e) => OptionChange("A", e.target.value)  }/>
 
-          <input
-            type="text"
-            placeholder="Option B"
-            value={options.B} onChange={(e) =>  OptionChange("B", e.target.value)   }
-          />
+          <input type="text" placeholder="Option B" value={options.B} onChange={(e) =>  OptionChange("B", e.target.value) } />
 
-          <input
-            type="text"
-            placeholder="Option C"
-            value={options.C}
-            onChange={(e) =>
-              OptionChange("C", e.target.value)
-            }
-          />
+          <input type="text" placeholder="Option C" value={options.C} onChange={(e) => OptionChange("C", e.target.value)  }/>
 
-          <input
-            type="text"
-            placeholder="Option D"
-            value={options.D}
-            onChange={(e) =>
-              OptionChange("D", e.target.value)
-            }
-          />
+          <input type="text" placeholder="Option D" value={options.D} onChange={(e) => OptionChange("D", e.target.value) }/>
 
-          <select
-            value={correctOption}
-            onChange={(e) => setCorrectOption(e.target.value)}
-          >
+          <select value={correctOption} onChange={(e) => setCorrectOption(e.target.value)}>
             <option value="">Select Correct Option</option>
             <option value="A">Option A</option>
             <option value="B">Option B</option>
@@ -140,24 +119,11 @@ const nextQuestionHandler = () => {
           {Object.keys(questions[currentQuestion].option).map(
             (key) => (
               <label key={key}>
-                <input
-                  type="radio"
-                  value={key}
-                  checked={selectedOption === key}
-                  onChange={() => setSelectedOption(key)}
-                />
-                {key}: {questions[currentQuestion].option[key]}
-                <br />
-              </label>
+               <input type="radio" value={key} checked={selectedOption === key} onChange={() => setSelectedOption(key)} /> {key}: {questions[currentQuestion].option[key]}  <br /> </label>
             )
           )}
 
-          <button
-            disabled={selectedOption === ""}
-            onClick={nextQuestionHandler}
-          >
-            Next
-          </button>
+          <button disabled={selectedOption === ""} onClick={nextQuestionHandler} >  Next</button>
         </>
       )}
     </div>
